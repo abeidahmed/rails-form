@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i # rubocop:disable Style/MutableConstant
 
   validates :username, :email_address, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 255 }
   validates :email_address, format: { with: VALID_EMAIL_REGEX }
