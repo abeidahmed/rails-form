@@ -1,17 +1,3 @@
 <h1>Create your user</h1>
 
-<%= form_with model: @user do |form| %>
-  <%= form.label :username %><br />
-  <%= form.text_field :username %><br />
-  <%= @user.errors.full_messages_for(:username).first %><br />
-
-  <%= form.label :email_address %><br />
-  <%= form.email_field :email_address %><br />
-  <%= @user.errors.full_messages_for(:email_address).first %><br />
-
-  <%= form.label :password %><br />
-  <%= form.password_field :password %><br />
-  <%= @user.errors.full_messages_for(:password).first %><br />
-
-  <%= form.submit %>
-<% end %>
+<%= render "form", user: @user %>
